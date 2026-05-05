@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Lovebay Vallejo | Profile</title>
     <style>
         :root { --primary: #2c3e50; --secondary: #3498db; --accent: #27ae60; --bg: #f4f7f6; }
@@ -15,17 +12,44 @@
         section { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
         h2 { color: var(--primary); border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 5px; }
-        .tag { display: inline-block; background: var(--secondary); color: #fff; padding: 6px 15px; border-radius: 50px; margin: 5px; font-weight: 500; font-size: 0.85rem; }
-        .tag { transition: transform 0.2s ease, background-color 0.2s ease; cursor: pointer;}
-        .tag:hover {transform: scale(1.1); background-color: var(--secondary); }
-        .tag-description {display: none; background: #f9f9f9; border-left: 4px solid var(--primary); padding: 10px; margin: 5px 0 15px 0; font-size: 0.85rem;  color: #555; border-radius: 4px;}
+        
+        /* MERGED TAG STYLE */
+        .tag { 
+            display: inline-block; 
+            background: var(--primary); 
+            color: #fff; 
+            padding: 6px 15px; 
+            border-radius: 4px; 
+            margin: 5px; 
+            font-weight: 500; 
+            font-size: 0.85rem; 
+            transition: transform 0.2s ease; 
+            cursor: pointer;
+        }
+        
+        .tag:hover { 
+            transform: scale(1.1); 
+            background-color: var(--secondary); 
+        }
+
+        .tag-description { 
+            display: none; 
+            background: #f9f9f9; 
+            border-left: 4px solid var(--primary); 
+            padding: 10px; 
+            margin: 5px 0 15px 0; 
+            font-size: 0.85rem; 
+            color: #555; 
+            border-radius: 4px; 
+        }
+
         .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
         .btn:hover { background: #219150; transform: translateY(-2px); }
         .engineer-badge { color: #e67e22; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
     </style>
 </head>
-    
 <body>
+
 <header>
     <h1>LOVEBAY VALLEJO</h1>
     <p class="engineer-badge">Licensed Electronics Engineer (ECE) | ECT</p>
@@ -33,45 +57,63 @@
 </header>
 
 <div class="container">
-    
     <section>
         <h2>Executive Summary</h2>
         <p>A licensed Electronics Engineer merging technical precision with creative digital solutions. I specialize in helping brands and businesses scale through high-quality content, professional video editing, and efficient administrative support.</p>
         <div style="margin-top: 15px;">
-        <p>With an analytical foundation, I apply a detail-oriented approach to streamline workflows and deliver error-free digital assets. I prioritize reliability and technical excellence to support the evolving needs of modern creators and agencies.</p>
+            <p>With an analytical foundation, I apply a detail-oriented approach to streamline workflows and deliver error-free digital assets. I prioritize reliability and technical excellence to support the evolving needs of modern creators and agencies.</p>
+        </div>
     </section>
 
-
-<section>
+    <section>
         <h2>Expertise</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem; border-left: 3px solid var(--secondary); padding-left: 10px;">Executive Assistance</h3>
+                
                 <div class="tag" onclick="toggleDesc(this)">Administrative Support</div>
                 <div class="tag-description">Providing high-level support including document preparation and workflow optimization.</div>
-                <div class="tag">Calendar Coordination</div>
-                <div class="tag">Email Management</div>
-                <div class="tag">Chat Support</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">Calendar Coordination</div>
+                <div class="tag-description">Efficiently managing appointments and ensuring zero schedule conflicts.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">Email Management</div>
+                <div class="tag-description">Inbox zero strategy and professional correspondence handling.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">Chat Support</div>
+                <div class="tag-description">Real-time non-voice customer support with high resolution rates.</div>
             </div>
 
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem; border-left: 3px solid var(--secondary); padding-left: 10px;">Video Editing</h3>
-                <div class="tag">Informative Videos</div>
-                <div class="tag">Short-form Videos</div>
-                <div class="tag">AI UGC Creation</div>
+                <div class="tag" onclick="toggleDesc(this)">Informative Videos</div>
+                <div class="tag-description">Educational content with clear pacing and visual aids.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">Short-form Videos</div>
+                <div class="tag-description">Engaging TikToks, Reels, and YouTube Shorts.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">AI UGC Creation</div>
+                <div class="tag-description">Leveraging AI for realistic and persuasive user-generated content.</div>
             </div>
 
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem; border-left: 3px solid var(--secondary); padding-left: 10px;">Electronics Engineer</h3>
-                <div class="tag">Circuit Design/Simulation</div>
-                <div class="tag">Technical Documents</div>
-                <div class="tag">OSP Design - FTTH</div>
-                <div class="tag">PCB Design</div>
-
+                <div class="tag" onclick="toggleDesc(this)">Circuit Design/Simulation</div>
+                <div class="tag-description">Designing and testing digital and analog circuits using modern tools.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">Technical Documents</div>
+                <div class="tag-description">Creating detailed project manuals and technical specifications.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">OSP Design - FTTH</div>
+                <div class="tag-description">Planning Outside Plant fiber-to-the-home infrastructure.</div>
+                
+                <div class="tag" onclick="toggleDesc(this)">PCB Design</div>
+                <div class="tag-description">Laying out professional Printed Circuit Boards.</div>
             </div>
         </div>
     </section>
 
+    <!-- Rest of the sections remain the same -->
     <section>
         <h2>Skill/Tool Set</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
@@ -85,14 +127,12 @@
                 <p><strong>Trello</strong></p>
                 <p><strong>Slack</strong></p>
             </div>
-
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem; border-left: 3px solid var(--secondary); padding-left: 10px;">Video Editing</h3>
                 <p><strong>Adobe Premiere Pro</strong></p>
                 <p><strong>CapCut</strong></p>
                 <p><strong>Canva</strong></p>
             </div>
-
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem; border-left: 3px solid var(--secondary); padding-left: 10px;">Electronics Engineer</h3>
                 <p><strong>AutoCAD</strong></p>
@@ -105,30 +145,23 @@
         </div>
     </section>
 
-    
-
     <section style="text-align: center;">
         <h2>Let's Collaborate</h2>
         <p>Ready to bring technical expertise to your business operations?</p>
         <a href="mailto:lovebayv@gmail.com?subject=Inquiry%20from%20Portfolio%20Website" target="_blank" class="btn">Hire Me Now</a>
     </section>
-
 </div>
 
 <script>
 function toggleDesc(element) {
-    // Find the next element (the description)
     var desc = element.nextElementSibling;
-    
-    // Toggle visibility
-    if (desc.style.display === "block") {
-        desc.style.display = "none";
-    } else {
+    // Check computed style to handle the first click correctly
+    if (window.getComputedStyle(desc).display === "none") {
         desc.style.display = "block";
+    } else {
+        desc.style.display = "none";
     }
 }
 </script>
-    
 </body>
-
 </html>
