@@ -115,6 +115,20 @@
 
 </div>
 
+<script>
+function toggleDesc(element) {
+    // Find the next element (the description)
+    var desc = element.nextElementSibling;
+    
+    // Toggle visibility
+    if (desc.style.display === "block") {
+        desc.style.display = "none";
+    } else {
+        desc.style.display = "block";
+    }
+}
+</script>
+    
 </body>
 
 </html>
