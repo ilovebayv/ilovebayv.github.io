@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovebay Vallejo | Profile</title>
+    <!-- Include Font Awesome for clean, sharp icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { 
             --primary: #2c3e50; 
             --secondary: #3498db; 
             --accent: #27ae60; 
-            --neutral-dark: #7f8c8d;
             --bg: #f4f7f6; 
             --nav-height: 60px;
         }
         
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--nav-height) + 20px); /* Prevents header from covering section titles */
+            scroll-padding-top: calc(var(--nav-height) + 20px);
         }
 
         body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: var(--bg); }
@@ -51,64 +52,94 @@
             transition: background 0.3s;
         }
 
-        .nav-tabs a:hover {
-            background: var(--secondary);
-        }
+        .nav-tabs a:hover { background: var(--secondary); }
 
         /* MAIN CONTENT CONTAINER */
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
         section { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         
-        /* THE TAGS */
+        /* THE ICON EXPERTISE TAGS */
         .tag { 
-            display: inline-block; 
-            background: var(--primary); 
-            color: #fff; 
-            padding: 6px 15px; 
-            border-radius: 4px; 
-            margin: 5px; 
-            font-weight: 500; 
-            font-size: 0.85rem; 
+            display: inline-flex;
+            flex-direction: column; /* Forces the text to stack directly below the icon */
+            align-items: center;
+            justify-content: center;
+            background: #fff; 
+            color: var(--primary); 
+            padding: 15px; 
+            border-radius: 12px; 
+            margin: 10px; 
+            width: 110px; /* Fixed square width for a neat grid layout */
+            height: 110px;
+            box-sizing: border-box;
+            border: 2px solid #eef2f5;
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
+        /* Large icon formatting */
+        .tag i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        /* Label text underneath */
+        .tag-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
         
         .tag:hover { 
-            transform: translateY(-3px) scale(1.05); 
-            background-color: var(--secondary); 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-5px); 
+            background-color: var(--primary); 
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .tag:hover i {
+            color: #fff; /* Flips the icon color to white on hover for high contrast */
         }
 
         .tag-description { 
             display: none; 
             background: #f9f9f9; 
             border-left: 4px solid var(--secondary); 
-            padding: 10px; 
-            margin: 5px 0 15px 5px; 
+            padding: 12px; 
+            margin: 10px 0; 
             font-size: 0.85rem; 
             color: #555; 
             border-radius: 4px; 
+            width: 100%; /* Spans full width when toggled open */
         }
 
         /* CTA BUTTONS */
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
+        .btn-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
         .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
         .btn-primary { background: var(--accent); color: white; }
         .btn-primary:hover { background: #219150; transform: translateY(-2px); }
-        
         .btn-secondary { background: var(--secondary); color: white; }
         .btn-secondary:hover { background: #2980b9; transform: translateY(-2px); }
         
         /* GRID FOR TOOLSET */
         .tools-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .tool-item { background: #eef2f5; padding: 8px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; }
+
+        /* PROFILE IMAGE MOCKUP */
+        .profile-img {
+            display: block;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px solid var(--secondary);
+            background: #eef2f5;
+        }
     </style>
 </head>
 <body>
@@ -120,45 +151,73 @@
 </header>
 
 <nav class="nav-tabs">
-    <a href="#me">About Me</a>
+    <a href="#summary">Executive Summary</a>
     <a href="#expertise">Expertise</a>
     <a href="#tools">Skill/Tool Set</a>
+    <a href="#me">About Me</a>
 </nav>
 
 <div class="container">
     
-    <!-- About Me Section -->
-    <section id="me">
-        <h2>About Me</h2>
-        <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>, a licensed electronics engineer and technician who handles remote work on the side. Armed with technical precision and creative versatility, I help businesses design custom layouts, streamline administrative tasks, manage technical documentation, and produce highly engaging short-form video content.</p>
-        <p>Whether navigating hardware design constraints or managing critical operational workflows, I provide dependable, data-driven support tailored to modern digital teams.</p>
+    <!-- Executive Summary Section -->
+    <section id="summary">
+        <h2>Executive Summary</h2>
+        <p>Dynamic and multi-skilled professional bridging the gap between technical engineering and creative digital support. Offering a unique blend of analytical problem-solving as a Licensed Electronics Engineer, visual storytelling expertise in video editing, and high-level administrative efficiency as an Executive Virtual Assistant.</p>
     </section>
-    
+
     <!-- Expertise Section -->
     <section id="expertise">
         <h2>Expertise</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+            
+            <!-- Column 1 -->
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem;">Executive Assistance</h3>
-                
-                <div class="tag" onclick="toggleDesc(this)">Administrative Support</div>
-                <div class="tag-description">Providing document prep and workflow optimization.</div>
-                
-                <div class="tag" onclick="toggleDesc(this)">Calendar Coordination</div>
-                <div class="tag-description">Managing schedules and avoiding conflicts.</div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    
+                    <div class="tag" onclick="toggleDesc(this)">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span class="tag-label">Administrative Support</span>
+                    </div>
+                    <div class="tag-description">Providing document prep and workflow optimization.</div>
+                    
+                    <div class="tag" onclick="toggleDesc(this)">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span class="tag-label">Calendar Coordination</span>
+                    </div>
+                    <div class="tag-description">Managing schedules and avoiding conflicts.</div>
+                    
+                </div>
             </div>
 
+            <!-- Column 2 -->
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem;">Video Editing</h3>
-                <div class="tag" onclick="toggleDesc(this)">Short-form Videos</div>
-                <div class="tag-description">TikTok, Reels, and Shorts optimization.</div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    
+                    <div class="tag" onclick="toggleDesc(this)">
+                        <i class="fa-solid fa-video"></i>
+                        <span class="tag-label">Short-form Videos</span>
+                    </div>
+                    <div class="tag-description">TikTok, Reels, and Shorts optimization.</div>
+                    
+                </div>
             </div>
 
+            <!-- Column 3 -->
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: var(--secondary); font-size: 1rem;">Electronics Engineer</h3>
-                <div class="tag" onclick="toggleDesc(this)">PCB Design</div>
-                <div class="tag-description">Professional circuit board layout.</div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    
+                    <div class="tag" onclick="toggleDesc(this)">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span class="tag-label">PCB Design</span>
+                    </div>
+                    <div class="tag-description">Professional circuit board layout.</div>
+                    
+                </div>
             </div>
+            
         </div>
     </section>
 
@@ -174,12 +233,19 @@
         </div>
     </section>
     
+    <!-- About Me Section -->
+    <section id="me" style="text-align: center;">
+        <h2>About Me</h2>
+        <img src="https://i.postimg.cc/76sb5fs7/My-Profile.jpg" alt="Lovebay Vallejo Profile Picture" class="profile-img">
+        <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>, a licensed electronics engineer and technician who handles high-impact remote work on the side. Armed with technical precision and creative versatility, I help businesses design custom circuit layouts, streamline administrative tasks, manage technical documentation, and produce highly engaging short-form video content.</p>
+        <p>Whether navigating hardware design constraints or managing critical operational workflows, I provide dependable, data-driven support tailored to modern digital teams.</p>
+    </section>
 
     <!-- Collaboration / Action Section -->
     <section style="text-align: center;">
         <h2>Let's Collaborate</h2>
         <div class="btn-container">
-            <a href="https://drive.google.com/uc?export=download&id=1U5A7YRIsp3iclTTlBhE88rqwDS70JbBU" download="Lovebay_Vallejo_Resume.pdf" class="btn btn-secondary">Download Resume (PDF)</a>
+            <a href="path-to-your-resume.pdf" download="Lovebay_Vallejo_Resume.pdf" class="btn btn-secondary">Download Resume (PDF)</a>
             <a href="mailto:lovebayv@gmail.com?subject=Inquiry" target="_blank" class="btn btn-primary">Hire Me Now</a>
         </div>
     </section>
