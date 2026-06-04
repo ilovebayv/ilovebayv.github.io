@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    /* FORMATTING */
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovebay Vallejo | Profile</title>
@@ -54,6 +57,9 @@
 
         .nav-tabs a:hover { background: var(--secondary); }
 
+
+
+        
         /* MAIN CONTENT CONTAINER */
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
         section { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
@@ -125,9 +131,51 @@
         .btn-secondary { background: var(--secondary); color: white; }
         .btn-secondary:hover { background: #2980b9; transform: translateY(-2px); }
         
-        /* GRID FOR TOOLSET */
-        .tools-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .tool-item { background: #eef2f5; padding: 8px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; }
+        /* 3-COLUMN LAYOUT FOR SKILL & TOOL SET */
+        .tools-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 25px; 
+            margin-top: 20px; 
+        }
+        .tools-column { 
+            flex: 1; 
+            min-width: 250px; 
+        }
+        .tools-list { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            margin-top: 15px; 
+        }
+        .tool-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: #eef2f5; 
+            padding: 10px 15px; 
+            border-radius: 8px; 
+            font-size: 0.95rem; 
+            font-weight: 500; 
+            color: var(--primary);
+        }
+        .tool-item i { 
+            font-size: 1.2rem; 
+            width: 24px; 
+            text-align: center; 
+        }
+        
+        /* Theme Branding Colors for Application Logos */
+        .fa-google { color: #4285F4; }
+        .fa-file-excel { color: #107C41; }
+        .fa-file-powerpoint { color: #C43E1C; }
+        .fa-hubspot { color: #FF7A59; }
+        .fa-trello { color: #0079BF; }
+        .fa-slack { color: #4A154B; }
+        .fa-calendar-days { color: #006BFF; }
+        .fa-video { color: #FF0000; }
+        .fa-palette { color: #00C4CC; }
+        .fa-microchip, .fa-compass-drafting, .fa-map-location-dot, .fa-gears { color: var(--secondary); }
 
         /* PROFILE IMAGE MOCKUP */
         .profile-img {
@@ -252,12 +300,47 @@
     <!-- Skill/Tool Set Section -->
     <section id="tools">
         <h2>Skill/Tool Set</h2>
-        <div class="tools-list">
-            <span class="tool-item">Altium Designer / EasyEDA</span>
-            <span class="tool-item">Adobe Premiere Pro / CapCut</span>
-            <span class="tool-item">Google Workspace & Office 365</span>
-            <span class="tool-item">Asana / Trello / ClickUp</span>
-            <span class="tool-item">Circuit Simulation (Multisim/LTspice)</span>
+        <div class="tools-container">
+            
+            <!-- Column 1: Administrative, CRM & Project Management -->
+            <div class="tools-column">
+                <h3 style="color: var(--secondary); font-size: 1rem;">Admin & CRM Tools</h3>
+                <div class="tools-list">
+                    <div class="tool-item"><i class="fa-brands fa-google"></i> Google Workspace</div>
+                    <div class="tool-item"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</div>
+                    <div class="tool-item"><i class="fa-regular fa-file-powerpoint"></i> Microsoft PowerPoint</div>
+                    <div class="tool-item"><i class="fa-solid fa-gears"></i> GoHighLevel (GHL)</div>
+                    <div class="tool-item"><i class="fa-brands fa-hubspot"></i> HubSpot</div>
+                    <div class="tool-item"><i class="fa-brands fa-trello"></i> Trello</div>
+                    <div class="tool-item"><i class="fa-brands fa-slack"></i> Slack</div>
+                    <div class="tool-item"><i class="fa-regular fa-calendar-days"></i> Calendly</div>
+                </div>
+            </div>
+
+            <!-- Column 2: Creative & Video Editing -->
+            <div class="tools-column">
+                <h3 style="color: var(--secondary); font-size: 1rem;">Creative Production</h3>
+                <div class="tools-list">
+                    <div class="tool-item"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</div>
+                    <div class="tool-item"><i class="fa-solid fa-video-slash"></i> CapCut</div>
+                    <div class="tool-item"><i class="fa-solid fa-palette"></i> Canva</div>
+                </div>
+            </div>
+
+            <!-- Column 3: Engineering, CAD & Simulation Software -->
+            <div class="tools-column">
+                <h3 style="color: var(--secondary); font-size: 1rem;">Engineering & Spatial Systems</h3>
+                <div class="tools-list">
+                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logisim</div>
+                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logic Friday</div>
+                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> EasyEDA</div>
+                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> Qucs-S</div>
+                    <div class="tool-item"><i class="fa-solid fa-compass-drafting"></i> AutoCAD</div>
+                    <div class="tool-item"><i class="fa-solid fa-map-location-dot"></i> QGIS & QField</div>
+                    <div class="tool-item"><i class="fa-solid fa-gears"></i> WEM</div>
+                </div>
+            </div>
+            
         </div>
     </section>
     
