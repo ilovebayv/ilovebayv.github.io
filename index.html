@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovebay Vallejo | Profile</title>
+    <!-- Include Font Awesome for clean, sharp icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { 
-            --primary: #1e293b; /* Deep Indigo Slate - Grounded & Professional */
-            --secondary: #475569; /* Muted Slate - Sophisticated Secondary Text/Icons */
-            --accent: #4f46e5; /* Royal Indigo - Muted yet chic interactive color */
-            --bg: #f8fafc; /* Crisp Off-White/Slate - Clean background canvas */
+            --primary: #1e293b; /* Deep Indigo Slate */
+            --secondary: #475569; /* Muted Slate */
+            --accent: #4f46e5; /* Royal Indigo */
+            --bg: #f8fafc; /* Crisp Off-White */
             --nav-height: 60px;
+            --bezier-fluid: cubic-bezier(0.25, 1, 0.5, 1); /* Elegant fluid movement curve */
         }
         
         html {
@@ -19,26 +21,59 @@
             scroll-padding-top: calc(var(--nav-height) + 20px);
         }
 
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; color: #334155; background-color: var(--bg); }
-        header { background: var(--primary); color: #fff; padding: 3rem 1rem 1.5rem; text-align: center; }
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; font-weight: 700; }
-        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
-        .engineer-badge { color: #f59e0b; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 5px; letter-spacing: 0.5px; }
-        .subtitle { margin-top: 5px; margin-bottom: 1.5rem; color: #cbd5e1; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; color: #334155; background-color: var(--bg); overflow-x: hidden; }
+        
+        /* FLUID BACKGROUND GRADIENT HEADER */
+        header { 
+            background: linear-gradient(-45deg, #1e293b, #2e3b4e, #111827, #1e293b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s var(--bezier-fluid) infinite;
+            color: #fff; 
+            padding: 4rem 1rem 2.5rem; 
+            text-align: center; 
+            position: relative;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        /* STICKY NAV TABS */
+        h1 { margin: 0; font-size: 2.7rem; letter-spacing: 2px; font-weight: 800; animation: fadeInUp 0.8s var(--bezier-fluid) forwards; }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+        
+        .engineer-badge { 
+            color: #f59e0b; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            margin-bottom: 5px; 
+            letter-spacing: 1px;
+            animation: fadeInUp 0.8s var(--bezier-fluid) 0.1s forwards;
+            opacity: 0;
+        }
+        .subtitle { 
+            margin-top: 5px; 
+            margin-bottom: 1.5rem; 
+            color: #cbd5e1; 
+            animation: fadeInUp 0.8s var(--bezier-fluid) 0.2s forwards;
+            opacity: 0;
+        }
+
+        /* STICKY NAV TABS WITH FLUID HOVER EFFECTS */
         .nav-tabs {
             position: -webkit-sticky;
             position: sticky;
             top: 0;
             background: var(--primary);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             display: flex;
             justify-content: center;
             gap: 15px;
             padding: 10px;
             z-index: 1000;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .nav-tabs a {
@@ -48,119 +83,146 @@
             font-size: 0.95rem;
             font-weight: 500;
             border-radius: 6px;
-            transition: background 0.3s;
+            position: relative;
+            transition: all 0.4s var(--bezier-fluid);
         }
 
-        .nav-tabs a:hover { background: var(--accent); }
+        .nav-tabs a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s var(--bezier-fluid);
+            transform: translateX(-50%);
+        }
 
-        /* MAIN CONTENT CONTAINER */
+        .nav-tabs a:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+        .nav-tabs a:hover::after { width: 60%; }
+
+        /* MAIN CONTENT CONTAINER & ENHANCED SCROLL ENTRANCES */
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        section { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; }
         
-        /* THE ICON EXPERTISE TAGS */
+        section { 
+            background: #fff; 
+            padding: 2rem; 
+            margin-bottom: 1.5rem; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 20px rgba(30, 41, 59, 0.02); 
+            border: 1px solid #e2e8f0; 
+            opacity: 0;
+            transform: translateY(30px);
+            animation: scrollReveal 0.8s var(--bezier-fluid) forwards;
+        }
+
+        /* Staggered section load paths */
+        section:nth-of-type(1) { animation-delay: 0.1s; }
+        section:nth-of-type(2) { animation-delay: 0.2s; }
+        section:nth-of-type(3) { animation-delay: 0.3s; }
+        section:nth-of-type(4) { animation-delay: 0.4s; }
+
+        @keyframes scrollReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* CORE GRID PATTERNS WITH KINETIC FEEDBACK MECHANISMS */
         .tag { 
             display: inline-flex;
-            flex-direction: column; /* Forces the text to stack directly below the icon */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background: #fff; 
             color: var(--primary); 
             padding: 15px; 
-            border-radius: 12px; 
+            border-radius: 14px; 
             margin: 10px; 
-            width: 110px; /* Fixed square width for a neat grid layout */
+            width: 110px; 
             height: 110px;
             box-sizing: border-box;
             border: 2px solid #f1f5f9;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.5s var(--bezier-fluid);
         }
 
-        /* Large icon formatting */
         .tag i {
             font-size: 1.8rem;
             color: var(--accent);
             margin-bottom: 10px;
-            transition: color 0.3s;
+            transition: transform 0.5s var(--bezier-fluid), color 0.4s var(--bezier-fluid);
         }
 
-        /* Label text underneath */
-        .tag-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-align: center;
-            line-height: 1.2;
-        }
+        .tag-label { font-size: 0.75rem; font-weight: 600; text-align: center; line-height: 1.2; }
         
         .tag:hover { 
-            transform: translateY(-5px); 
+            transform: translateY(-6px) scale(1.03); 
             background-color: var(--primary); 
             color: #fff;
             border-color: var(--primary);
-            box-shadow: 0 6px 15px rgba(30, 41, 59, 0.15);
+            box-shadow: 0 12px 24px rgba(30, 41, 59, 0.12);
         }
 
-        .tag:hover i {
-            color: #fff; /* Flips the icon color to white on hover for high contrast */
-        }
+        .tag:hover i { color: #fff; transform: scale(1.1); }
 
         .tag-description { 
             display: none; 
             background: #f8fafc; 
             border-left: 4px solid var(--accent); 
-            padding: 12px; 
+            padding: 14px; 
             margin: 10px 0; 
             font-size: 0.85rem; 
             color: #475569; 
-            border-radius: 4px; 
-            width: 100%; /* Spans full width when toggled open */
+            border-radius: 6px; 
+            width: 100%;
+            box-sizing: border-box;
+            animation: expandDrawer 0.4s var(--bezier-fluid) forwards;
         }
 
-        /* CTA BUTTONS */
+        @keyframes expandDrawer {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HIGH-PERFORMANCE CTA INTERACTIONS */
         .btn-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-primary:hover { background: #4338ca; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
-        .btn-secondary { background: #f1f5f9; color: var(--primary); border: 1px solid #e2e8f0; }
-        .btn-secondary:hover { background: #e2e8f0; transform: translateY(-2px); }
+        .btn { display: inline-block; padding: 12px 28px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.4s var(--bezier-fluid); }
         
-        /* 3-COLUMN LAYOUT FOR SKILL & TOOL SET */
-        .tools-container { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 25px; 
-            margin-top: 20px; 
-        }
-        .tools-column { 
-            flex: 1; 
-            min-width: 250px; 
-        }
-        .tools-list { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 12px; 
-            margin-top: 15px; 
-        }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.2); }
+        .btn-primary:hover { background: #4338ca; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4); }
+        
+        .btn-secondary { background: #fff; color: var(--primary); border: 1px solid #cbd5e1; }
+        .btn-secondary:hover { background: #f8fafc; transform: translateY(-3px); border-color: #94a3b8; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04); }
+        
+        /* 3-COLUMN LAYOUT AND INTERACTIVE TOOLSET PILLS */
+        .tools-container { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
+        .tools-column { flex: 1; min-width: 250px; }
+        .tools-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        
         .tool-item { 
             display: flex; 
             align-items: center; 
             gap: 12px; 
-            background: #f8fafc; 
+            background: #fff; 
             padding: 10px 15px; 
-            border-radius: 8px; 
+            border-radius: 10px; 
             font-size: 0.95rem; 
             font-weight: 500; 
             color: #334155;
-            border: 1px solid #f1f5f9;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s var(--bezier-fluid);
         }
-        .tool-item i { 
-            font-size: 1.2rem; 
-            width: 24px; 
-            text-align: center; 
-            color: var(--secondary);
-        }
+        .tool-item i { font-size: 1.2rem; width: 24px; text-align: center; color: var(--secondary); transition: transform 0.3s var(--bezier-fluid); }
+        
+        .tool-item:hover { transform: translateX(5px); border-color: var(--accent); background: #f8fafc; }
+        .tool-item:hover i { transform: scale(1.15); color: var(--accent); }
 
-        /* PROFILE IMAGE MOCKUP */
+        /* PROFILE IMAGE FLUID FRAMES */
         .profile-img {
             display: block;
             width: 150px;
@@ -168,16 +230,22 @@
             object-fit: cover;
             border-radius: 50%;
             margin: 0 auto 20px;
-            border: 3px solid var(--accent);
+            border: 4px solid var(--bg);
+            box-shadow: 0 0 0 3px var(--accent);
             background: #f1f5f9;
+            transition: transform 0.6s var(--bezier-fluid), box-shadow 0.6s var(--bezier-fluid);
+        }
+        .profile-img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 0 5px var(--accent), 0 12px 24px rgba(79, 70, 229, 0.25);
         }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="engineer-badge">Licensed Electronics Engineer (ECE) | ECT</div>
     <h1>LOVEBAY VALLEJO</h1>
-    <p class="engineer-badge">Licensed Electronics Engineer (ECE) | ECT</p>
     <p class="subtitle">Electronics Engineer • Video Editor • Executive Virtual Assistant</p>
 </header>
 
@@ -332,7 +400,7 @@
         <h2>About Me</h2>
         <img src="https://i.postimg.cc/76sb5fs7/My-Profile.jpg" alt="Lovebay Vallejo Profile Picture" class="profile-img">
         <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>. By day, I am a licensed electronics engineer and technician, but I’ve channeled my passion for technology and organization into high-impact remote work on the side.</p>
-        <p>I thrive at the intersection of technical precision and creative freedom. Whether I am deep in circuit simulation and layout planning, editing engaging long and short-form videos, or setting up automation systems for busy executives, I approach every project with a meticulous, data-driven mindset. I love building things that work seamlessly—whether that's hardware or a business workflow.</p>
+        <p>I thrive at the intersection of technical precision and creative freedom. Whether I am deep in circuit simulation and layout planning, editing engaging long and short-form videos, or setting up automation systems for busy executives, I approach every project with a meticulous, data-driven mindset. I love building things that work seamlessly, whether that's hardware or a business workflow.</p>
     </section>
 
     <!-- Collaboration / Action Section -->
