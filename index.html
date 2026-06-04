@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovebay Vallejo | Profile</title>
-    <!-- Include Font Awesome for clean, sharp icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { 
-            --primary: #606061; 
-            --secondary: #a19aab; 
-            --accent: #c6aee8; 
-            --bg: #e6e1eb; 
+            --primary: #1e293b; /* Deep Indigo Slate - Grounded & Professional */
+            --secondary: #475569; /* Muted Slate - Sophisticated Secondary Text/Icons */
+            --accent: #4f46e5; /* Royal Indigo - Muted yet chic interactive color */
+            --bg: #f8fafc; /* Crisp Off-White/Slate - Clean background canvas */
             --nav-height: 60px;
         }
         
@@ -20,12 +19,12 @@
             scroll-padding-top: calc(var(--nav-height) + 20px);
         }
 
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: var(--bg); }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; color: #334155; background-color: var(--bg); }
         header { background: var(--primary); color: #fff; padding: 3rem 1rem 1.5rem; text-align: center; }
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; font-weight: 700; }
         h2 { color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
-        .engineer-badge { color: var(--accent); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 5px; }
-        .subtitle { margin-top: 5px; margin-bottom: 1.5rem; }
+        .engineer-badge { color: #f59e0b; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 5px; letter-spacing: 0.5px; }
+        .subtitle { margin-top: 5px; margin-bottom: 1.5rem; color: #cbd5e1; }
 
         /* STICKY NAV TABS */
         .nav-tabs {
@@ -43,7 +42,7 @@
         }
 
         .nav-tabs a {
-            color: #fff;
+            color: #f1f5f9;
             text-decoration: none;
             padding: 8px 16px;
             font-size: 0.95rem;
@@ -52,11 +51,11 @@
             transition: background 0.3s;
         }
 
-        .nav-tabs a:hover { background: var(--secondary); }
+        .nav-tabs a:hover { background: var(--accent); }
 
         /* MAIN CONTENT CONTAINER */
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        section { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        section { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; }
         
         /* THE ICON EXPERTISE TAGS */
         .tag { 
@@ -72,15 +71,15 @@
             width: 110px; /* Fixed square width for a neat grid layout */
             height: 110px;
             box-sizing: border-box;
-            border: 2px solid #eef2f5;
+            border: 2px solid #f1f5f9;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         /* Large icon formatting */
         .tag i {
-            font-size: 2rem;
-            color: var(--secondary);
+            font-size: 1.8rem;
+            color: var(--accent);
             margin-bottom: 10px;
             transition: color 0.3s;
         }
@@ -98,7 +97,7 @@
             background-color: var(--primary); 
             color: #fff;
             border-color: var(--primary);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 15px rgba(30, 41, 59, 0.15);
         }
 
         .tag:hover i {
@@ -107,12 +106,12 @@
 
         .tag-description { 
             display: none; 
-            background: #f9f9f9; 
+            background: #f8fafc; 
             border-left: 4px solid var(--accent); 
             padding: 12px; 
             margin: 10px 0; 
             font-size: 0.85rem; 
-            color: #555; 
+            color: #475569; 
             border-radius: 4px; 
             width: 100%; /* Spans full width when toggled open */
         }
@@ -120,10 +119,10 @@
         /* CTA BUTTONS */
         .btn-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
         .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #4d4d4e; transform: translateY(-2px); }
-        .btn-secondary { background: var(--accent); color: #333; }
-        .btn-secondary:hover { background: #b59bd8; transform: translateY(-2px); }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #4338ca; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
+        .btn-secondary { background: #f1f5f9; color: var(--primary); border: 1px solid #e2e8f0; }
+        .btn-secondary:hover { background: #e2e8f0; transform: translateY(-2px); }
         
         /* 3-COLUMN LAYOUT FOR SKILL & TOOL SET */
         .tools-container { 
@@ -146,12 +145,13 @@
             display: flex; 
             align-items: center; 
             gap: 12px; 
-            background: #eef2f5; 
+            background: #f8fafc; 
             padding: 10px 15px; 
             border-radius: 8px; 
             font-size: 0.95rem; 
             font-weight: 500; 
-            color: var(--primary);
+            color: #334155;
+            border: 1px solid #f1f5f9;
         }
         .tool-item i { 
             font-size: 1.2rem; 
@@ -169,7 +169,7 @@
             border-radius: 50%;
             margin: 0 auto 20px;
             border: 3px solid var(--accent);
-            background: #eef2f5;
+            background: #f1f5f9;
         }
     </style>
 </head>
@@ -203,7 +203,7 @@
             
             <!-- Column 1 -->
             <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: var(--secondary); font-size: 1rem;">Executive Assistance</h3>
+                <h3 style="color: var(--accent); font-size: 1rem;">Executive Assistance</h3>
                 <div style="display: flex; flex-wrap: wrap;">
                     
                     <div class="tag" onclick="toggleDesc(this)">
@@ -229,7 +229,7 @@
 
             <!-- Column 2 -->
             <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: var(--secondary); font-size: 1rem;">Video Editing</h3>
+                <h3 style="color: var(--accent); font-size: 1rem;">Video Editing</h3>
                 <div style="display: flex; flex-wrap: wrap;">
                     
                     <div class="tag" onclick="toggleDesc(this)">
@@ -248,7 +248,7 @@
 
             <!-- Column 3 -->
             <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: var(--secondary); font-size: 1rem;">Electronics Engineer</h3>
+                <h3 style="color: var(--accent); font-size: 1rem;">Electronics Engineer</h3>
                 <div style="display: flex; flex-wrap: wrap;">
                     
                     <div class="tag" onclick="toggleDesc(this)">
@@ -287,7 +287,7 @@
             
             <!-- Column 1: Administrative, CRM & Project Management -->
             <div class="tools-column">
-                <h3 style="color: var(--secondary); font-size: 1rem;">Admin & CRM Tools</h3>
+                <h3 style="color: var(--accent); font-size: 1rem;">Admin & CRM Tools</h3>
                 <div class="tools-list">
                     <div class="tool-item"><i class="fa-brands fa-google"></i> Google Workspace</div>
                     <div class="tool-item"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</div>
@@ -302,7 +302,7 @@
 
             <!-- Column 2: Creative & Video Editing -->
             <div class="tools-column">
-                <h3 style="color: var(--secondary); font-size: 1rem;">Creative Production</h3>
+                <h3 style="color: var(--accent); font-size: 1rem;">Creative Production</h3>
                 <div class="tools-list">
                     <div class="tool-item"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</div>
                     <div class="tool-item"><i class="fa-solid fa-video-slash"></i> CapCut</div>
@@ -312,7 +312,7 @@
 
             <!-- Column 3: Engineering, CAD & Simulation Software -->
             <div class="tools-column">
-                <h3 style="color: var(--secondary); font-size: 1rem;">Engineering & Spatial Systems</h3>
+                <h3 style="color: var(--accent); font-size: 1rem;">Engineering & Spatial Systems</h3>
                 <div class="tools-list">
                     <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logisim</div>
                     <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logic Friday</div>
