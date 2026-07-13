@@ -1,427 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovebay Vallejo | Profile</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Include Font Awesome for clean, sharp icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { 
-            --primary: #1e293b; /* Deep Indigo Slate */
-            --secondary: #475569; /* Muted Slate */
-            --accent: #4f46e5; /* Royal Indigo */
-            --bg: #f8fafc; /* Crisp Off-White */
-            --nav-height: 60px;
-            --bezier-fluid: cubic-bezier(0.25, 1, 0.5, 1); /* Elegant fluid movement curve */
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--nav-height) + 20px);
-        }
-
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; color: #334155; background-color: var(--bg); overflow-x: hidden; }
-        
-        /* FLUID BACKGROUND GRADIENT HEADER */
-        header { 
-            background: linear-gradient(-45deg, #1e293b, #2e3b4e, #111827, #1e293b);
-            background-size: 400% 400%;
-            animation: gradientShift 15s var(--bezier-fluid) infinite;
-            color: #fff; 
-            padding: 4rem 1rem 2.5rem; 
-            text-align: center; 
-            position: relative;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        h1 { margin: 0; font-size: 2.7rem; letter-spacing: 2px; font-weight: 800; animation: fadeInUp 0.8s var(--bezier-fluid) forwards; }
-        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
-        
-        .engineer-badge { 
-            color: #f59e0b; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            font-size: 0.9rem; 
-            margin-bottom: 5px; 
-            letter-spacing: 1px;
-            animation: fadeInUp 0.8s var(--bezier-fluid) 0.1s forwards;
-            opacity: 0;
-        }
-        .subtitle { 
-            margin-top: 5px; 
-            margin-bottom: 1.5rem; 
-            color: #cbd5e1; 
-            animation: fadeInUp 0.8s var(--bezier-fluid) 0.2s forwards;
-            opacity: 0;
-        }
-
-        /* STICKY NAV TABS WITH FLUID HOVER EFFECTS */
-        .nav-tabs {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            background: var(--primary);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 10px;
-            z-index: 1000;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .nav-tabs a {
-            color: #f1f5f9;
-            text-decoration: none;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-radius: 6px;
-            position: relative;
-            transition: all 0.4s var(--bezier-fluid);
-        }
-
-        .nav-tabs a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: all 0.3s var(--bezier-fluid);
-            transform: translateX(-50%);
-        }
-
-        .nav-tabs a:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
-        .nav-tabs a:hover::after { width: 60%; }
-
-        /* MAIN CONTENT CONTAINER & ENHANCED SCROLL ENTRANCES */
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        
-        section { 
-            background: #fff; 
-            padding: 2rem; 
-            margin-bottom: 1.5rem; 
-            border-radius: 16px; 
-            box-shadow: 0 4px 20px rgba(30, 41, 59, 0.02); 
-            border: 1px solid #e2e8f0; 
-            opacity: 0;
-            transform: translateY(30px);
-            animation: scrollReveal 0.8s var(--bezier-fluid) forwards;
-        }
-
-        /* Staggered section load paths */
-        section:nth-of-type(1) { animation-delay: 0.1s; }
-        section:nth-of-type(2) { animation-delay: 0.2s; }
-        section:nth-of-type(3) { animation-delay: 0.3s; }
-        section:nth-of-type(4) { animation-delay: 0.4s; }
-
-        @keyframes scrollReveal {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* CORE GRID PATTERNS WITH KINETIC FEEDBACK MECHANISMS */
-        .tag { 
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #fff; 
-            color: var(--primary); 
-            padding: 15px; 
-            border-radius: 14px; 
-            margin: 10px; 
-            width: 110px; 
-            height: 110px;
-            box-sizing: border-box;
-            border: 2px solid #f1f5f9;
-            cursor: pointer;
-            transition: all 0.5s var(--bezier-fluid);
-        }
-
-        .tag i {
-            font-size: 1.8rem;
-            color: var(--accent);
-            margin-bottom: 10px;
-            transition: transform 0.5s var(--bezier-fluid), color 0.4s var(--bezier-fluid);
-        }
-
-        .tag-label { font-size: 0.75rem; font-weight: 600; text-align: center; line-height: 1.2; }
-        
-        .tag:hover { 
-            transform: translateY(-6px) scale(1.03); 
-            background-color: var(--primary); 
-            color: #fff;
-            border-color: var(--primary);
-            box-shadow: 0 12px 24px rgba(30, 41, 59, 0.12);
-        }
-
-        .tag:hover i { color: #fff; transform: scale(1.1); }
-
-        .tag-description { 
-            display: none; 
-            background: #f8fafc; 
-            border-left: 4px solid var(--accent); 
-            padding: 14px; 
-            margin: 10px 0; 
-            font-size: 0.85rem; 
-            color: #475569; 
-            border-radius: 6px; 
-            width: 100%;
-            box-sizing: border-box;
-            animation: expandDrawer 0.4s var(--bezier-fluid) forwards;
-        }
-
-        @keyframes expandDrawer {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* HIGH-PERFORMANCE CTA INTERACTIONS */
-        .btn-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .btn { display: inline-block; padding: 12px 28px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.4s var(--bezier-fluid); }
-        
-        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.2); }
-        .btn-primary:hover { background: #4338ca; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4); }
-        
-        .btn-secondary { background: #fff; color: var(--primary); border: 1px solid #cbd5e1; }
-        .btn-secondary:hover { background: #f8fafc; transform: translateY(-3px); border-color: #94a3b8; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04); }
-        
-        /* 3-COLUMN LAYOUT AND INTERACTIVE TOOLSET PILLS */
-        .tools-container { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
-        .tools-column { flex: 1; min-width: 250px; }
-        .tools-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        
-        .tool-item { 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            background: #fff; 
-            padding: 10px 15px; 
-            border-radius: 10px; 
-            font-size: 0.95rem; 
-            font-weight: 500; 
-            color: #334155;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s var(--bezier-fluid);
-        }
-        .tool-item i { font-size: 1.2rem; width: 24px; text-align: center; color: var(--secondary); transition: transform 0.3s var(--bezier-fluid); }
-        
-        .tool-item:hover { transform: translateX(5px); border-color: var(--accent); background: #f8fafc; }
-        .tool-item:hover i { transform: scale(1.15); color: var(--accent); }
-
-        /* PROFILE IMAGE FLUID FRAMES */
-        .profile-img {
-            display: block;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 4px solid var(--bg);
-            box-shadow: 0 0 0 3px var(--accent);
-            background: #f1f5f9;
-            transition: transform 0.6s var(--bezier-fluid), box-shadow 0.6s var(--bezier-fluid);
-        }
-        .profile-img:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 0 0 5px var(--accent), 0 12px 24px rgba(79, 70, 229, 0.25);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-
-<header>
-    <div class="engineer-badge">Licensed Electronics Engineer (ECE) | ECT</div>
-    <h1>LOVEBAY VALLEJO</h1>
-    <p class="subtitle">Electronics Engineer • Video Editor • Executive Virtual Assistant</p>
-</header>
-
-<nav class="nav-tabs">
-    <a href="#summary">Executive Summary</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#tools">Skill/Tool Set</a>
-    <a href="#me">About Me</a>
-</nav>
-
-<div class="container">
-    
-    <!-- Executive Summary Section -->
-    <section id="summary">
-        <h2>Executive Summary</h2>
-        <p>A highly adaptable professional offering a powerful combination of analytical engineering logic, creative digital media production, and streamlined operational management. Specializing in technical problem-solving and workflow optimization to help fast-growing digital teams scale efficiently.</p>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise">
-        <h2>Expertise</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
-            
-            <!-- Column 1 -->
-            <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: var(--accent); font-size: 1rem;">Executive Assistance</h3>
-                <div style="display: flex; flex-wrap: wrap;">
-                    
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <span class="tag-label">Administrative Support</span>
-                    </div>
-                    <div class="tag-description">Providing document prep and workflow optimization.</div>
-                    
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span class="tag-label">Calendar Coordination</span>
-                    </div>
-                    <div class="tag-description">Managing schedules and avoiding conflicts.</div>
-
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-diagram-project"></i>
-                        <span class="tag-label">Project & Workflow</span>
-                    </div>
-                    <div class="tag-description">Managing collaborative trackers, handling email correspondence, and maintaining digital file systems.</div>
-                    
-                </div>
-            </div>
-
-            <!-- Column 2 -->
-            <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: var(--accent); font-size: 1rem;">Video Editing</h3>
-                <div style="display: flex; flex-wrap: wrap;">
-                    
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-video"></i>
-                        <span class="tag-label">Short-form Videos</span>
-                    </div>
-                    <div class="tag-description">TikTok, Reels, and Shorts optimization.</div>
-
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-clapperboard"></i>
-                        <span class="tag-label">Long-form Videos</span>
-                    </div>
-                    <div class="tag-description">Structuring, pacing, and editing long-form content for YouTube, corporate presentations, and Vlogs.</div>
-                </div>
-            </div>
-
-            <!-- Column 3 -->
-            <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: var(--accent); font-size: 1rem;">Electronics Engineer</h3>
-                <div style="display: flex; flex-wrap: wrap;">
-                    
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-microchip"></i>
-                        <span class="tag-label">PCB Design</span>
-                    </div>
-                    <div class="tag-description">Professional circuit board layout.</div>
-
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-bezier-curve"></i>
-                        <span class="tag-label">Circuit Design</span>
-                    </div>
-                    <div class="tag-description">Schematic capture, circuit simulation, component selection, and electrical prototyping.</div>
-
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <span class="tag-label">OSP Design (FTTH)</span>
-                    </div>
-                    <div class="tag-description">Outside Plant engineering for Fiber-to-the-Home networks, network mapping, and distribution architecture.</div>
-
-                    <div class="tag" onclick="toggleDesc(this)">
-                        <i class="fa-solid fa-building-shield"></i>
-                        <span class="tag-label">Auxiliary Systems</span>
-                    </div>
-                    <div class="tag-description">Design and integration of critical building infrastructure including FDAS, PABGM, and VDS.</div>
-                </div>
-            </div>
-            
+    <div class="gradient-bg">
+        <div class="gradient-bg__bubbles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Skill/Tool Set Section -->
-    <section id="tools">
-        <h2>Skill/Tool Set</h2>
-        <div class="tools-container">
-            
-            <!-- Column 1: Administrative, CRM & Project Management -->
-            <div class="tools-column">
-                <h3 style="color: var(--accent); font-size: 1rem;">Admin & CRM Tools</h3>
-                <div class="tools-list">
-                    <div class="tool-item"><i class="fa-brands fa-google"></i> Google Workspace</div>
-                    <div class="tool-item"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</div>
-                    <div class="tool-item"><i class="fa-regular fa-file-powerpoint"></i> Microsoft PowerPoint</div>
-                    <div class="tool-item"><i class="fa-solid fa-gears"></i> GoHighLevel (GHL)</div>
-                    <div class="tool-item"><i class="fa-brands fa-hubspot"></i> HubSpot</div>
-                    <div class="tool-item"><i class="fa-brands fa-trello"></i> Trello</div>
-                    <div class="tool-item"><i class="fa-brands fa-slack"></i> Slack</div>
-                    <div class="tool-item"><i class="fa-regular fa-calendar-days"></i> Calendly</div>
+    <header>
+        <div class="engineer-badge">Licensed Electronics Engineer (ECE) | ECT</div>
+        <h1>LOVEBAY VALLEJO</h1>
+        <p class="subtitle">Electronics Engineer • Video Editor • Executive Virtual Assistant</p>
+    </header>
+
+    <nav class="nav-tabs">
+        <a href="#summary">Executive Summary</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#tools">Skill/Tool Set</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#me">About Me</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Executive Summary Section -->
+        <section id="summary">
+            <h2>Executive Summary</h2>
+            <p>A highly adaptable professional offering a powerful combination of analytical engineering logic, creative
+                digital media production, and streamlined operational management. Specializing in technical
+                problem-solving and workflow optimization to help fast-growing digital teams scale efficiently.</p>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise">
+            <h2>Expertise</h2>
+            <div class="expertise-grid">
+
+                <!-- Column 1 -->
+                <div class="expertise-column">
+                    <h3>Executive Assistance</h3>
+                    <div class="expertise-tags">
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <span class="tag-label">Administrative Support</span>
+                            </div>
+                            <div class="tag-description">Providing document prep and workflow optimization.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <span class="tag-label">Calendar Coordination</span>
+                            </div>
+                            <div class="tag-description">Managing schedules and avoiding conflicts.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                <span class="tag-label">Project & Workflow</span>
+                            </div>
+                            <div class="tag-description">Managing collaborative trackers, handling email correspondence, and maintaining digital file systems.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="expertise-column">
+                    <h3>Video Editing</h3>
+                    <div class="expertise-tags">
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-video"></i>
+                                <span class="tag-label">Short-form Videos</span>
+                            </div>
+                            <div class="tag-description">TikTok, Reels, and Shorts optimization.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-clapperboard"></i>
+                                <span class="tag-label">Long-form Videos</span>
+                            </div>
+                            <div class="tag-description">Structuring, pacing, and editing long-form content for YouTube, corporate presentations, and Vlogs.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="expertise-column">
+                    <h3>Electronics Engineer</h3>
+                    <div class="expertise-tags">
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-microchip"></i>
+                                <span class="tag-label">PCB Design</span>
+                            </div>
+                            <div class="tag-description">Professional circuit board layout.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-bezier-curve"></i>
+                                <span class="tag-label">Circuit Design</span>
+                            </div>
+                            <div class="tag-description">Schematic capture, circuit simulation, component selection, and electrical prototyping.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-network-wired"></i>
+                                <span class="tag-label">OSP Design (FTTH)</span>
+                            </div>
+                            <div class="tag-description">Outside Plant engineering for Fiber-to-the-Home networks, network mapping, and distribution architecture.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-building-shield"></i>
+                                <span class="tag-label">Auxiliary Systems</span>
+                            </div>
+                            <div class="tag-description">Design and integration of critical building infrastructure including FDAS, PABGM, and VDS.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skill/Tool Set Section -->
+        <section id="tools">
+            <h2>Skill/Tool Set</h2>
+            <div class="tools-container">
+
+                <!-- Column 1: Administrative, CRM & Project Management -->
+                <div class="tools-column">
+                    <h3>Admin & CRM Tools</h3>
+                    <div class="tools-list">
+                        <div class="tool-item"><i class="fa-brands fa-google"></i> Google Workspace</div>
+                        <div class="tool-item"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</div>
+                        <div class="tool-item"><i class="fa-regular fa-file-powerpoint"></i> Microsoft PowerPoint</div>
+                        <div class="tool-item"><i class="fa-solid fa-gears"></i> GoHighLevel (GHL)</div>
+                        <div class="tool-item"><i class="fa-brands fa-hubspot"></i> HubSpot</div>
+                        <div class="tool-item"><i class="fa-brands fa-trello"></i> Trello</div>
+                        <div class="tool-item"><i class="fa-brands fa-slack"></i> Slack</div>
+                        <div class="tool-item"><i class="fa-regular fa-calendar-days"></i> Calendly</div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Creative & Video Editing -->
+                <div class="tools-column">
+                    <h3>Creative Production</h3>
+                    <div class="tools-list">
+                        <div class="tool-item"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</div>
+                        <div class="tool-item"><i class="fa-solid fa-video-slash"></i> CapCut</div>
+                        <div class="tool-item"><i class="fa-solid fa-palette"></i> Canva</div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Engineering, CAD & Simulation Software -->
+                <div class="tools-column">
+                    <h3>Engineering & Spatial Systems</h3>
+                    <div class="tools-list">
+                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logisim</div>
+                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logic Friday</div>
+                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> EasyEDA</div>
+                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Qucs-S</div>
+                        <div class="tool-item"><i class="fa-solid fa-compass-drafting"></i> AutoCAD</div>
+                        <div class="tool-item"><i class="fa-solid fa-map-location-dot"></i> QGIS & QField</div>
+                        <div class="tool-item"><i class="fa-solid fa-gears"></i> WEM</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Featured Video Production Section -->
+        <section id="portfolio">
+            <h2>Featured Video Production</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/3_b-hA92W5k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Column 2: Creative & Video Editing -->
-            <div class="tools-column">
-                <h3 style="color: var(--accent); font-size: 1rem;">Creative Production</h3>
-                <div class="tools-list">
-                    <div class="tool-item"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</div>
-                    <div class="tool-item"><i class="fa-solid fa-video-slash"></i> CapCut</div>
-                    <div class="tool-item"><i class="fa-solid fa-palette"></i> Canva</div>
-                </div>
+
+
+
+        <!-- About Me Section -->
+        <section id="me" style="text-align: center;">
+            <h2>About Me</h2>
+            <img src="https://i.postimg.cc/76sb5fs7/My-Profile.jpg" alt="Lovebay Vallejo Profile Picture"
+                class="profile-img">
+            <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>. By day, I am a licensed electronics engineer and
+                technician, but I’ve channeled my passion for technology and organization into high-impact remote work
+                on the side.</p>
+            <p>I thrive at the intersection of technical precision and creative freedom. Whether I am deep in circuit
+                simulation and layout planning, editing engaging long and short-form videos, or setting up automation
+                systems for busy executives, I approach every project with a meticulous, data-driven mindset. I love
+                building things that work seamlessly, whether that's hardware or a business workflow.</p>
+        </section>
+
+        <!-- Collaboration / Action Section -->
+        <section style="text-align: center;">
+            <h2>Let's Collaborate</h2>
+            <div class="btn-container">
+                <a href="https://drive.google.com/uc?export=download&id=1U5A7YRIsp3iclTTlBhE88rqwDS70JbBU"
+                    download="Lovebay_Vallejo_Resume.pdf" class="btn btn-secondary">Download Resume (PDF)</a>
+                <a href="mailto:lovebayv@gmail.com?subject=Inquiry" target="_blank" class="btn btn-primary">Hire Me
+                    Now</a>
             </div>
+        </section>
+    </div>
 
-            <!-- Column 3: Engineering, CAD & Simulation Software -->
-            <div class="tools-column">
-                <h3 style="color: var(--accent); font-size: 1rem;">Engineering & Spatial Systems</h3>
-                <div class="tools-list">
-                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logisim</div>
-                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logic Friday</div>
-                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> EasyEDA</div>
-                    <div class="tool-item"><i class="fa-solid fa-microchip"></i> Qucs-S</div>
-                    <div class="tool-item"><i class="fa-solid fa-compass-drafting"></i> AutoCAD</div>
-                    <div class="tool-item"><i class="fa-solid fa-map-location-dot"></i> QGIS & QField</div>
-                    <div class="tool-item"><i class="fa-solid fa-gears"></i> WEM</div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-    
-    <!-- About Me Section -->
-    <section id="me" style="text-align: center;">
-        <h2>About Me</h2>
-        <img src="https://i.postimg.cc/76sb5fs7/My-Profile.jpg" alt="Lovebay Vallejo Profile Picture" class="profile-img">
-        <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>. By day, I am a licensed electronics engineer and technician, but I’ve channeled my passion for technology and organization into high-impact remote work on the side.</p>
-        <p>I thrive at the intersection of technical precision and creative freedom. Whether I am deep in circuit simulation and layout planning, editing engaging long and short-form videos, or setting up automation systems for busy executives, I approach every project with a meticulous, data-driven mindset. I love building things that work seamlessly, whether that's hardware or a business workflow.</p>
-    </section>
+    <script src="script.js"></script>
 
-    <!-- Collaboration / Action Section -->
-    <section style="text-align: center;">
-        <h2>Let's Collaborate</h2>
-        <div class="btn-container">
-            <a href="https://drive.google.com/uc?export=download&id=1U5A7YRIsp3iclTTlBhE88rqwDS70JbBU" download="Lovebay_Vallejo_Resume.pdf" class="btn btn-secondary">Download Resume (PDF)</a>
-            <a href="mailto:lovebayv@gmail.com?subject=Inquiry" target="_blank" class="btn btn-primary">Hire Me Now</a>
-        </div>
-    </section>
-</div>
-
-<script>
-    function toggleDesc(element) {
-        var desc = element.nextElementSibling;
-        if (desc.style.display === "block") {
-            desc.style.display = "none";
-        } else {
-            desc.style.display = "block";
-        }
-    }
-</script>
 </body>
+
 </html>
