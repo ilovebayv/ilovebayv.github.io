@@ -25,16 +25,17 @@
     </div>
 
     <header>
+        <div class="creative-badge"><i class="fa-solid fa-clapperboard"></i> Video Editor & Creative Producer</div>
         <div class="engineer-badge">Licensed Electronics Engineer (ECE) | ECT</div>
         <h1>LOVEBAY VALLEJO</h1>
-        <p class="subtitle">Electronics Engineer • Video Editor • Executive Virtual Assistant</p>
+        <p class="subtitle">Creative Video Editor • Post-Production Specialist • Electronics Engineer</p>
     </header>
 
     <nav class="nav-tabs">
-        <a href="#summary">Executive Summary</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#tools">Skill/Tool Set</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portfolio">Featured Production</a>
+        <a href="#expertise">Areas of Expertise</a>
+        <a href="#tools">Toolbox / Skills</a>
+        <a href="#summary">Summary</a>
         <a href="#me">About Me</a>
     </nav>
 
@@ -43,17 +44,85 @@
         <!-- Executive Summary Section -->
         <section id="summary">
             <h2>Executive Summary</h2>
-            <p>A highly adaptable professional offering a powerful combination of analytical engineering logic, creative
-                digital media production, and streamlined operational management. Specializing in technical
-                problem-solving and workflow optimization to help fast-growing digital teams scale efficiently.</p>
+            <p>A dynamic Video Editor and Creative Producer combining structural engineering logic with cinematic storytelling. Specializing in high-retention post-production, visual pacing, and creative pacing to help digital brands and content creators maximize viewer engagement. Bringing a data-driven engineering mindset to media workflows, automation, and project management to deliver professional-grade digital assets efficiently.</p>
         </section>
 
         <!-- Expertise Section -->
         <section id="expertise">
-            <h2>Expertise</h2>
+            <h2>Areas of Expertise</h2>
             <div class="expertise-grid">
 
-                <!-- Column 1 -->
+                <!-- Column 1: Video Editing (Primary) -->
+                <div class="expertise-column primary-column">
+                    <h3>Video Editing & Production</h3>
+                    <div class="expertise-tags">
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span class="tag-label">Short-Form Content</span>
+                            </div>
+                            <div class="tag-description">Hook creation, high-retention pacing, auto-captions, and visual edits optimized for TikTok, Instagram Reels, and YouTube Shorts.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-film"></i>
+                                <span class="tag-label">Long-Form Pacing</span>
+                            </div>
+                            <div class="tag-description">Structuring YouTube vlogs, documentaries, podcasts, and corporate videos for smooth narrative flow and high audience retention.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span class="tag-label">Motion & VFX</span>
+                            </div>
+                            <div class="tag-description">Custom titles, callouts, smooth transition effects, screen recording zooming, and dynamic animations that keep eyes on screen.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-sliders"></i>
+                                <span class="tag-label">Color & Sound</span>
+                            </div>
+                            <div class="tag-description">Professional color correction, look adjustment (LUTs), audio noise reduction, background music leveling, and sound effects layering.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Electronics Engineer -->
+                <div class="expertise-column">
+                    <h3>Electronics Engineering</h3>
+                    <div class="expertise-tags">
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-microchip"></i>
+                                <span class="tag-label">PCB Design</span>
+                            </div>
+                            <div class="tag-description">Professional circuit board layout and schematic mapping.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-bezier-curve"></i>
+                                <span class="tag-label">Circuit Design</span>
+                            </div>
+                            <div class="tag-description">Schematic capture, component selection, simulation, and hardware prototyping.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-network-wired"></i>
+                                <span class="tag-label">OSP Design (FTTH)</span>
+                            </div>
+                            <div class="tag-description">Outside Plant engineering for Fiber-to-the-Home distribution mapping and FTTH network design.</div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="tag" onclick="toggleDesc(this)">
+                                <i class="fa-solid fa-building-shield"></i>
+                                <span class="tag-label">Auxiliary Systems</span>
+                            </div>
+                            <div class="tag-description">Design and integration of critical safety and communication infrastructure (FDAS, CCTV, VDS).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Executive Assistance -->
                 <div class="expertise-column">
                     <h3>Executive Assistance</h3>
                     <div class="expertise-tags">
@@ -62,82 +131,21 @@
                                 <i class="fa-solid fa-folder-open"></i>
                                 <span class="tag-label">Administrative Support</span>
                             </div>
-                            <div class="tag-description">Providing document prep and workflow optimization.</div>
+                            <div class="tag-description">Document editing, database management, and operational workflows.</div>
                         </div>
                         <div class="expertise-item">
                             <div class="tag" onclick="toggleDesc(this)">
                                 <i class="fa-solid fa-calendar-days"></i>
-                                <span class="tag-label">Calendar Coordination</span>
+                                <span class="tag-label">Coordination</span>
                             </div>
-                            <div class="tag-description">Managing schedules and avoiding conflicts.</div>
+                            <div class="tag-description">Calendar maintenance, scheduling, and email inbox management.</div>
                         </div>
                         <div class="expertise-item">
                             <div class="tag" onclick="toggleDesc(this)">
                                 <i class="fa-solid fa-diagram-project"></i>
-                                <span class="tag-label">Project & Workflow</span>
+                                <span class="tag-label">Project Management</span>
                             </div>
-                            <div class="tag-description">Managing collaborative trackers, handling email correspondence,
-                                and maintaining digital file systems.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="expertise-column">
-                    <h3>Video Editing</h3>
-                    <div class="expertise-tags">
-                        <div class="expertise-item">
-                            <div class="tag" onclick="toggleDesc(this)">
-                                <i class="fa-solid fa-video"></i>
-                                <span class="tag-label">Short-form Videos</span>
-                            </div>
-                            <div class="tag-description">TikTok, Reels, and Shorts optimization.</div>
-                        </div>
-                        <div class="expertise-item">
-                            <div class="tag" onclick="toggleDesc(this)">
-                                <i class="fa-solid fa-clapperboard"></i>
-                                <span class="tag-label">Long-form Videos</span>
-                            </div>
-                            <div class="tag-description">Structuring, pacing, and editing long-form content for YouTube,
-                                corporate presentations, and Vlogs.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="expertise-column">
-                    <h3>Electronics Engineer</h3>
-                    <div class="expertise-tags">
-                        <div class="expertise-item">
-                            <div class="tag" onclick="toggleDesc(this)">
-                                <i class="fa-solid fa-microchip"></i>
-                                <span class="tag-label">PCB Design</span>
-                            </div>
-                            <div class="tag-description">Professional circuit board layout.</div>
-                        </div>
-                        <div class="expertise-item">
-                            <div class="tag" onclick="toggleDesc(this)">
-                                <i class="fa-solid fa-bezier-curve"></i>
-                                <span class="tag-label">Circuit Design</span>
-                            </div>
-                            <div class="tag-description">Schematic capture, circuit simulation, component selection, and
-                                electrical prototyping.</div>
-                        </div>
-                        <div class="expertise-item">
-                            <div class="tag" onclick="toggleDesc(this)">
-                                <i class="fa-solid fa-network-wired"></i>
-                                <span class="tag-label">OSP Design (FTTH)</span>
-                            </div>
-                            <div class="tag-description">Outside Plant engineering for Fiber-to-the-Home networks,
-                                network mapping, and distribution architecture.</div>
-                        </div>
-                        <div class="expertise-item">
-                            <div class="tag" onclick="toggleDesc(this)">
-                                <i class="fa-solid fa-building-shield"></i>
-                                <span class="tag-label">Auxiliary Systems</span>
-                            </div>
-                            <div class="tag-description">Design and integration of critical building infrastructure
-                                including FDAS, PABGM, and VDS.</div>
+                            <div class="tag-description">Handling project trackers, file organization systems, and team task management.</div>
                         </div>
                     </div>
                 </div>
@@ -147,45 +155,47 @@
 
         <!-- Skill/Tool Set Section -->
         <section id="tools">
-            <h2>Skill/Tool Set</h2>
+            <h2>Toolbox / Skills</h2>
             <div class="tools-container">
 
-                <!-- Column 1: Administrative, CRM & Project Management -->
-                <div class="tools-column">
-                    <h3>Admin & CRM Tools</h3>
-                    <div class="tools-list">
-                        <div class="tool-item"><i class="fa-brands fa-google"></i> Google Workspace</div>
-                        <div class="tool-item"><i class="fa-regular fa-file-excel"></i> Microsoft Excel</div>
-                        <div class="tool-item"><i class="fa-regular fa-file-powerpoint"></i> Microsoft PowerPoint</div>
-                        <div class="tool-item"><i class="fa-solid fa-gears"></i> GoHighLevel (GHL)</div>
-                        <div class="tool-item"><i class="fa-brands fa-hubspot"></i> HubSpot</div>
-                        <div class="tool-item"><i class="fa-brands fa-trello"></i> Trello</div>
-                        <div class="tool-item"><i class="fa-brands fa-slack"></i> Slack</div>
-                        <div class="tool-item"><i class="fa-regular fa-calendar-days"></i> Calendly</div>
-                    </div>
-                </div>
-
-                <!-- Column 2: Creative & Video Editing -->
-                <div class="tools-column">
-                    <h3>Creative Production</h3>
+                <!-- Column 1: Creative & Video Editing -->
+                <div class="tools-column creative-tools">
+                    <h3>Post-Production & Creative</h3>
                     <div class="tools-list">
                         <div class="tool-item"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</div>
-                        <div class="tool-item"><i class="fa-solid fa-video-slash"></i> CapCut</div>
+                        <div class="tool-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Adobe After Effects</div>
+                        <div class="tool-item"><i class="fa-solid fa-sliders"></i> DaVinci Resolve</div>
+                        <div class="tool-item"><i class="fa-solid fa-scissors"></i> CapCut</div>
+                        <div class="tool-item"><i class="fa-solid fa-image"></i> Adobe Photoshop</div>
+                        <div class="tool-item"><i class="fa-solid fa-bezier-curve"></i> Adobe Illustrator</div>
+                        <div class="tool-item"><i class="fa-solid fa-file-audio"></i> Adobe Audition</div>
                         <div class="tool-item"><i class="fa-solid fa-palette"></i> Canva</div>
                     </div>
                 </div>
 
-                <!-- Column 3: Engineering, CAD & Simulation Software -->
+                <!-- Column 2: Engineering, CAD & Simulation Software -->
                 <div class="tools-column">
-                    <h3>Engineering & Spatial Systems</h3>
+                    <h3>Engineering & Technical</h3>
                     <div class="tools-list">
-                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logisim</div>
-                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logic Friday</div>
-                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> EasyEDA</div>
-                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Qucs-S</div>
                         <div class="tool-item"><i class="fa-solid fa-compass-drafting"></i> AutoCAD</div>
                         <div class="tool-item"><i class="fa-solid fa-map-location-dot"></i> QGIS & QField</div>
-                        <div class="tool-item"><i class="fa-solid fa-gears"></i> WEM</div>
+                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> EasyEDA</div>
+                        <div class="tool-item"><i class="fa-solid fa-microchip"></i> Logisim & Logic Friday</div>
+                        <div class="tool-item"><i class="fa-solid fa-wave-square"></i> Qucs-S Simulation</div>
+                        <div class="tool-item"><i class="fa-solid fa-gears"></i> WEM Platform</div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Administrative, CRM & Project Management -->
+                <div class="tools-column">
+                    <h3>Admin & Operations</h3>
+                    <div class="tools-list">
+                        <div class="tool-item"><i class="fa-brands fa-google"></i> Google Workspace</div>
+                        <div class="tool-item"><i class="fa-regular fa-file-excel"></i> MS Excel & PowerPoint</div>
+                        <div class="tool-item"><i class="fa-solid fa-gears"></i> GoHighLevel (GHL)</div>
+                        <div class="tool-item"><i class="fa-brands fa-hubspot"></i> HubSpot CRM</div>
+                        <div class="tool-item"><i class="fa-brands fa-trello"></i> Trello & Slack</div>
+                        <div class="tool-item"><i class="fa-regular fa-calendar-days"></i> Calendly</div>
                     </div>
                 </div>
 
@@ -195,21 +205,101 @@
         <!-- Featured Video Production Section -->
         <section id="portfolio">
             <h2>Featured Video Production</h2>
+            
+            <!-- Category Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Production</button>
+                <button class="filter-btn" data-filter="long-form">Long-Form (YouTube)</button>
+                <button class="filter-btn" data-filter="short-form">Short-Form (Reels/TikTok)</button>
+                <button class="filter-btn" data-filter="promotional">Promos & Commercials</button>
+            </div>
+
             <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-embed">
-                        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                <!-- Video 1: Long-Form -->
+                <div class="video-card" data-category="long-form">
+                    <div class="video-thumbnail-container" data-video-id="ysz5S6PUM-U">
+                        <img src="https://img.youtube.com/vi/ysz5S6PUM-U/hqdefault.jpg" alt="Featured Vlog Editing" class="video-thumbnail">
+                        <div class="video-overlay">
+                            <div class="play-button-wrapper">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-duration">5:42</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category-tag"><i class="fa-brands fa-youtube"></i> Long-Form</span>
+                        <h3>Cinematic YouTube Vlog / Showcase</h3>
+                        <p>High-energy pacing, custom color grading (LUTs), and dynamic multi-cam storytelling.</p>
+                        <div class="video-meta">
+                            <span><i class="fa-solid fa-screwdriver-wrench"></i> Premiere Pro</span>
+                            <span><i class="fa-solid fa-wand-magic-sparkles"></i> After Effects</span>
+                        </div>
                     </div>
                 </div>
-                <div class="video-card">
-                    <div class="video-embed">
-                        <iframe src="https://www.youtube.com/embed/3_b-hA92W5k" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+
+                <!-- Video 2: Long-Form -->
+                <div class="video-card" data-category="long-form">
+                    <div class="video-thumbnail-container" data-video-id="3_b-hA92W5k">
+                        <img src="https://img.youtube.com/vi/3_b-hA92W5k/hqdefault.jpg" alt="Technical Video Editing" class="video-thumbnail">
+                        <div class="video-overlay">
+                            <div class="play-button-wrapper">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-duration">4:15</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category-tag"><i class="fa-brands fa-youtube"></i> Long-Form</span>
+                        <h3>Technical Walkthrough & Editing</h3>
+                        <p>Focus on clean text animations, smooth transitions, screen zoom-ins, and sound design.</p>
+                        <div class="video-meta">
+                            <span><i class="fa-solid fa-screwdriver-wrench"></i> Premiere Pro</span>
+                            <span><i class="fa-solid fa-image"></i> Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3: Short-Form (Placeholder) -->
+                <div class="video-card" data-category="short-form">
+                    <div class="video-thumbnail-container" data-video-id="ysz5S6PUM-U">
+                        <img src="https://img.youtube.com/vi/ysz5S6PUM-U/hqdefault.jpg" alt="Short-Form Video" class="video-thumbnail">
+                        <div class="video-overlay">
+                            <div class="play-button-wrapper">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-duration">0:58</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category-tag"><i class="fa-solid fa-mobile-screen-button"></i> Short-Form</span>
+                        <h3>Engaging Short / Instagram Reel</h3>
+                        <p>Visual hooks within the first 3 seconds, fast transitions, and stylized text captions.</p>
+                        <div class="video-meta">
+                            <span><i class="fa-solid fa-scissors"></i> CapCut</span>
+                            <span><i class="fa-solid fa-screwdriver-wrench"></i> Premiere Pro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4: Promotional (Placeholder) -->
+                <div class="video-card" data-category="promotional">
+                    <div class="video-thumbnail-container" data-video-id="3_b-hA92W5k">
+                        <img src="https://img.youtube.com/vi/3_b-hA92W5k/hqdefault.jpg" alt="Promo Video" class="video-thumbnail">
+                        <div class="video-overlay">
+                            <div class="play-button-wrapper">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-duration">1:30</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category-tag"><i class="fa-solid fa-bullhorn"></i> Promotional</span>
+                        <h3>SaaS Platform Product Demo</h3>
+                        <p>Dynamic screen captures, click tracking, kinetic typography, and upbeat music integration.</p>
+                        <div class="video-meta">
+                            <span><i class="fa-solid fa-screwdriver-wrench"></i> Premiere Pro</span>
+                            <span><i class="fa-solid fa-wand-magic-sparkles"></i> After Effects</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -222,13 +312,8 @@
         <section id="me" style="text-align: center;">
             <h2>About Me</h2>
             <img src="photos/My-Profile.jpg" alt="Lovebay Vallejo Profile Picture" class="profile-img">
-            <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>. By day, I am a licensed electronics engineer and
-                technician, but I’ve channeled my passion for technology and organization into high-impact remote work
-                on the side.</p>
-            <p>I thrive at the intersection of technical precision and creative freedom. Whether I am deep in circuit
-                simulation and layout planning, editing engaging long and short-form videos, or setting up automation
-                systems for busy executives, I approach every project with a meticulous, data-driven mindset. I love
-                building things that work seamlessly, whether that's hardware or a business workflow.</p>
+            <p>Hi There! I am <strong>LOVEBAY VALLEJO</strong>. I am a professional video editor, creative producer, and licensed electronics engineer. I channel my technical precision and passion for digital storytelling into crafting high-impact video content for creators and businesses.</p>
+            <p>I thrive at the intersection of structural logic and creative freedom. Whether I am pacing a video for maximum viewer retention, editing long or short-form narratives, styling motion graphics, or designing fiber optic networks and hardware systems, I approach every task with a meticulous, detail-oriented mindset. I love creating digital and physical experiences that flow seamlessly.</p>
         </section>
 
         <!-- Collaboration / Action Section -->
