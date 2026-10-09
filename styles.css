@@ -399,11 +399,15 @@ h2 {
     transition: all 0.3s var(--bezier-fluid);
 }
 
-.tool-item i {
+.tool-item i,
+.tool-item svg {
     font-size: 1.2rem;
     width: 24px;
+    height: 24px;
     text-align: center;
     color: var(--accent);
+    fill: currentColor;
+    flex-shrink: 0;
     transition: transform 0.3s var(--bezier-fluid);
 }
 
@@ -414,7 +418,8 @@ h2 {
     color: var(--primary);
 }
 
-.tool-item:hover i {
+.tool-item:hover i,
+.tool-item:hover svg {
     transform: scale(1.15);
 }
 
