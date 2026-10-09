@@ -716,6 +716,32 @@ h2 {
     color: var(--accent);
 }
 
+.tiktok-link {
+    font-size: 0.75rem;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid var(--glass-border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+.tiktok-link:hover {
+    background: var(--accent);
+    color: #090514;
+    border-color: var(--accent);
+}
+
+.play-button-wrapper i.fa-tiktok {
+    margin-left: 0;
+}
+
 .video-embed {
     position: relative;
     padding-bottom: 56.25%;

@@ -68,6 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     thumbnailContainers.forEach(container => {
         container.addEventListener('click', () => {
+            const platform = container.getAttribute('data-platform');
+            const videoUrl = container.getAttribute('data-video-url');
+
+            if (platform === 'tiktok' && videoUrl) {
+                window.open(videoUrl, '_blank', 'noopener,noreferrer');
+                return;
+            }
+
             const videoId = container.getAttribute('data-video-id');
             if (!videoId) return;
 
