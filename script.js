@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const platform = container.getAttribute('data-platform');
             const videoUrl = container.getAttribute('data-video-url');
 
-            if (platform === 'tiktok' && videoUrl) {
+            if ((platform === 'tiktok' || platform === 'drive' || videoUrl) && !container.getAttribute('data-video-id')) {
                 window.open(videoUrl, '_blank', 'noopener,noreferrer');
                 return;
             }
